@@ -1,124 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/RecipeRowLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/row_CardView"
-        android:layout_width="0dp"
+    <data>
+        <variable
+            name="result"
+            type="com.example.patrickmealplanner_pmd.models.Result" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RecipeRowLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="14dp"
-        app:strokeWidth="2dp"
-        app:strokeColor="?attr/colorSecondaryVariant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?attr/colorPrimaryVariant">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/row_CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="?attr/colorSecondaryVariant"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/recipe_imageView"
-                android:layout_width="160dp"
-                android:layout_height="0dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryVariant">
 
-            <TextView
-                android:id="@+id/title_textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="14dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="TextView"
-                android:textColor="?attr/colorSecondary"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.032"
-                app:layout_constraintStart_toEndOf="@+id/recipe_imageView"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/recipe_imageView"
+                    android:layout_width="160dp"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars"
+                    loadImageFromURL="@{result.image}"/>
 
-            <TextView
-                android:id="@+id/description_textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:ellipsize="end"
-                android:maxLines="3"
-                android:text="sabhfbhbhbsahgbbshgbsabhgbhsabghbsahbghbahgbhsabgsdahbdsadasdasdsadsadshbghabga"
-                android:textColor="?attr/colorSecondaryVariant"
-                app:layout_constraintEnd_toEndOf="@+id/title_textView"
-                app:layout_constraintStart_toStartOf="@+id/title_textView"
-                app:layout_constraintTop_toBottomOf="@+id/title_textView" />
+                <TextView
+                    android:id="@+id/title_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="14dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{result.title}"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.032"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_imageView"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/time_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12m"
-                android:textAlignment="center"
-                android:textColor="?attr/colorSecondary"
-                app:layout_constraintStart_toStartOf="@+id/description_textView"
-                app:layout_constraintTop_toBottomOf="@+id/time_imageView" />
+                <TextView
+                    android:id="@+id/description_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="@{result.summary}"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    app:layout_constraintEnd_toEndOf="@+id/title_textView"
+                    app:layout_constraintStart_toStartOf="@+id/title_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/title_textView" />
 
-            <ImageView
-                android:id="@+id/vegan_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/vegan_textView"
-                app:layout_constraintStart_toStartOf="@+id/vegan_textView"
-                app:layout_constraintTop_toBottomOf="@+id/description_textView"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/app_vegan"
-                app:tint="@color/accent_green" />
+                <TextView
+                    android:id="@+id/time_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12m"
+                    setNumberOfMinutes="@{result.readyInMinutes}"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/description_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/time_imageView" />
 
-            <ImageView
-                android:id="@+id/time_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/time_textView"
-                app:layout_constraintStart_toStartOf="@+id/time_textView"
-                app:layout_constraintTop_toBottomOf="@+id/description_textView"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/app_clock"
-                app:tint="?attr/colorSecondary" />
+                <ImageView
+                    android:id="@+id/vegan_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/vegan_textView"
+                    app:layout_constraintStart_toStartOf="@+id/vegan_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/description_textView"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/app_vegan"
+                    app:tint="@color/accent_green"
+                    applyVeganColor="@{result.vegan}"/>
 
-            <TextView
-                android:id="@+id/vegan_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:text="Vegan"
-                android:textAlignment="center"
-                android:textColor="@color/accent_green"
-                app:layout_constraintStart_toEndOf="@+id/time_textView"
-                app:layout_constraintTop_toBottomOf="@+id/vegan_imageView" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/time_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/time_textView"
+                    app:layout_constraintStart_toStartOf="@+id/time_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/description_textView"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/app_clock"
+                    app:tint="?attr/colorSecondary" />
 
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/vegan_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Vegan"
+                    applyVeganColor="@{result.vegan}"
+                    android:textAlignment="center"
+                    android:textColor="@color/accent_green"
+                    app:layout_constraintStart_toEndOf="@+id/time_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/vegan_imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
