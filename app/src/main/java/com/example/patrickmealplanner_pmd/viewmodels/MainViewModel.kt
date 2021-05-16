@@ -1,4 +1,4 @@
-package com.example.patrickmealplanner_pmd
+package com.example.patrickmealplanner_pmd.viewmodels
 
 import android.app.Application
 import android.content.Context

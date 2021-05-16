@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimaryVariant"
+    android:background="?attr/colorPrimary"
     tools:context=".ui.home.bottomsheet.RecipesBottomSheet">
 
 
@@ -179,7 +179,7 @@
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/apply_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
