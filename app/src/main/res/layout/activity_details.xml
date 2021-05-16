@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.DetailsActivity">
@@ -84,7 +85,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="14dp"
         android:background="@drawable/app_button"
-        android:text="Add To Plan"
+        android:text="ADD TO PLAN"
         android:textColor="@color/text1_dark"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -115,8 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="18sp"
-                android:textColor="?attr/colorSecondaryVariant"/>
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 

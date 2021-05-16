@@ -1,4 +1,4 @@
-package com.example.patrickmealplanner_pmd.data.database
+package com.example.patrickmealplanner_pmd.data.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
