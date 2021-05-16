@@ -1,36 +1,40 @@
 package com.example.patrickmealplanner_pmd.models
 
 
+import android.os.Parcelable
 import com.example.patrickmealplanner_pmd.models.ExtendedIngredient
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class Result(
-        @SerializedName("aggregateLikes")
+    @SerializedName("aggregateLikes")
     val aggregateLikes: Int,
-        @SerializedName("cheap")
+    @SerializedName("cheap")
     val cheap: Boolean,
-        val cuisines: List<String>,
-        @SerializedName("dairyFree")
+    val cuisines: List<String>,
+    @SerializedName("dairyFree")
     val dairyFree: Boolean,
-        @SerializedName("extendedIngredients")
-    val extendedIngredients: List<ExtendedIngredient>,
-        @SerializedName("glutenFree")
+    @SerializedName("extendedIngredients")
+    val extendedIngredients: @RawValue List<ExtendedIngredient>,
+    @SerializedName("glutenFree")
     val glutenFree: Boolean,
-        @SerializedName("id")
+    @SerializedName("id")
     val id: Int,
-        @SerializedName("image")
+    @SerializedName("image")
     val image: String,
     //@SerializedName("license")
     //val license: String,
-        @SerializedName("readyInMinutes")
+    @SerializedName("readyInMinutes")
     val readyInMinutes: Int,
-        @SerializedName("sourceName")
+    @SerializedName("sourceName")
     val sourceName: String,
-        @SerializedName("sourceUrl")
+    @SerializedName("sourceUrl")
     val sourceUrl: String,
-        @SerializedName("summary")
+    @SerializedName("summary")
     val summary: String,
-        @SerializedName("title")
+    @SerializedName("title")
     val title: String,
     /*@SerializedName("unusedIngredients")
     val unusedIngredients: List<Any>,
@@ -40,10 +44,10 @@ data class Result(
     val usedIngredients: List<Any>,*/
     @SerializedName("vegan")
     val vegan: Boolean,
-        @SerializedName("vegetarian")
+    @SerializedName("vegetarian")
     val vegetarian: Boolean,
-        @SerializedName("veryHealthy")
+    @SerializedName("veryHealthy")
     val veryHealthy: Boolean
     //@SerializedName("veryPopular")
     //val veryPopular: Boolean
-)
+): Parcelable
