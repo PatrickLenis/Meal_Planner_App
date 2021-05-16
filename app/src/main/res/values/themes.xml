@@ -14,4 +14,11 @@
         <!-- Customize your theme here. -->
 
     </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_interactive</item>
+        <item name="android:textColor">@color/chip_text_interactive</item>
+        <item name="checkedIconTint">@color/chip_text_interactive</item>
+    </style>
+
 </resources>

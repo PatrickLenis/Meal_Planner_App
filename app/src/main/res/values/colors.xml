@@ -26,4 +26,6 @@
     <color name="accent_green">#1CD49C</color>
     <color name="accent_red">#F02873</color>
 
+    <color name="accent_green_chip">#1CD49C</color>
+
 </resources>

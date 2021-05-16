@@ -67,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:cardCornerRadius="23dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +93,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/recipes_fab"
         android:layout_width="70dp"
         android:layout_height="77dp"
         android:layout_marginStart="317dp"
