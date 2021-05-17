@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.patrickmealplanner_pmd.R
 import com.example.patrickmealplanner_pmd.adapters.FavoriteRecipesAdapter
+import com.example.patrickmealplanner_pmd.databinding.FragmentDashboardBinding
 import com.example.patrickmealplanner_pmd.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
@@ -25,11 +26,19 @@ class DashboardFragment : Fragment() {
     private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }
     private val mainViewModel: MainViewModel by viewModels()
 
+    private var _binding: FragmentDashboardBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        binding.mainViewModle = mainViewModel
+        binding.mAdapter = mAdapter
+
         dashboardViewModel =
                 ViewModelProvider(this).get(DashboardViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
@@ -38,17 +47,22 @@ class DashboardFragment : Fragment() {
             textView.text = it
         })
 
-        setupRecyclerView(root.favoriteRecipesRecyclerView)
+        setupRecyclerView(binding.favoriteRecipesRecyclerView)
 
         mainViewModel.readFavoriteRecipes.observe(viewLifecycleOwner, Observer { favoritesEntity ->
             mAdapter.setData(favoritesEntity)
         })
 
-        return root
+        return binding.root
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView){
         recyclerView.adapter = mAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

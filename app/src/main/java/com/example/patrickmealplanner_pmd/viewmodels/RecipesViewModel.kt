@@ -44,7 +44,7 @@ class RecipesViewModel @ViewModelInject constructor(
             }
         }
 
-        queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
+        queries[QUERY_NUMBER] = "10"
         queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_TYPE] = mealType
         queries[QUERY_DIET] = dietType
