@@ -58,6 +58,7 @@ class DetailsActivity : AppCompatActivity() {
                         recipeExists = true//Log.d("CHECKER", "Called")
                         savedId = savedRecipe.id
                         planButton.text = "REMOVE FROM PLAN"
+                        //planButton.background = resources.getDrawable(R.drawable.app_button_red)
                     }
                 }
             }catch (e : Exception){

@@ -68,7 +68,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/app_button"
-        android:text="Back To Recipes"
+        android:text="BACK"
         android:textColor="@color/text1_dark"
         android:textSize="18sp"
         android:textStyle="bold"
